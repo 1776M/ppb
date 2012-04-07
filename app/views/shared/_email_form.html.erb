@@ -1,0 +1,17 @@
+<%= form_for @email do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    Choose either a pinterest board or photo below
+
+    <%= f.label :link_to_pinterest_board %><br />
+    <%= f.text_field :pinterest_board_url %>
+
+    <%= f.label :link_to_pinterest_photo %><br />  
+    <%= f.text_field :pinterest_photo_url %>
+
+    <%= f.submit "Submit" %>
+
+<% end %>

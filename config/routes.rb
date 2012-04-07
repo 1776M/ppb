@@ -1,7 +1,10 @@
 Ppb::Application.routes.draw do
 
+  resources :emails
+  resources :joiners
+
   root to: 'pages#home'
-  get "pages/help"
-  get "pages/about"
+  match '/help',    to: 'pages#help'
+  match '/about',   to: 'pages#about'
 
 end

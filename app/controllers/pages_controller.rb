@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
+
   def home
+    @joiner = Joiner.new
   end
 
   def help
@@ -7,4 +9,5 @@ class PagesController < ApplicationController
 
   def about
   end
+
 end
