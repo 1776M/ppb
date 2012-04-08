@@ -13,6 +13,7 @@ class JoinersController < ApplicationController
     @joiner = Joiner.new(params[:email])
     if @joiner.save 
       flash[:success] = "Thank you for your interest, we will be in touch"
+      redirect_to '/'
     else
       @title = "New request"
       render 'new'
@@ -27,6 +28,7 @@ class JoinersController < ApplicationController
     @joiner = Joiner.find(params[:id])
     if @joiner.update_attributes(params[:joiner])
       flash[:success] = "Request updated"
+      redirect_to '/'
     else
       @title = "Edit email"
       render 'edit'
@@ -40,6 +42,7 @@ class JoinersController < ApplicationController
   def destroy
     Email.find(params[:id]).destroy
     flash[:success] = "Request deleted"
+    redirect_to '/'
   end
 
 end
