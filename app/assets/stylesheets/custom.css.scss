@@ -185,3 +185,13 @@ input, textarea, select, .uneditable-input {
   margin-top: 45px;
   @include box_sizing;
 }
+
+
+.hero-unit {
+  background-color: #999;
+  margin-bottom: 30px;
+  padding: 60px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
