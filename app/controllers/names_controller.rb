@@ -1,19 +1,18 @@
-class JoinersController < ApplicationController
-
+class NamesController < ApplicationController
 
   def new
-      @joiner = Joiner.new
+      @name = Name.new
   end
 
   def show
-      @joiner = Joiner.find(params[:id])
+      @name = Name.find(params[:id])
   end
 
   def create
-    @joiner = Joiner.new(params[:email])
-    if @joiner.save 
+    @name = Name.new(params[:name])
+    if @name.save 
       flash[:success] = "Thank you for your interest, we will be in touch"
-      redirect_to '/'
+      redirect_to '/buynow'
     else
       flash[:success] = "The form could not be submitted, please retry"
       redirect_to '/'
@@ -21,12 +20,12 @@ class JoinersController < ApplicationController
   end
 
   def edit
-      @joiner = Joiner.find(params[:id])   
+      @name = Name.find(params[:id])   
   end
 
   def update
-    @joiner = Joiner.find(params[:id])
-    if @joiner.update_attributes(params[:joiner])
+    @name = Name.find(params[:id])
+    if @name.update_attributes(params[:name])
       flash[:success] = "Request updated"
       redirect_to '/'
     else
@@ -36,13 +35,14 @@ class JoinersController < ApplicationController
   end
  
   def index
-    @joiners = Joiner.all
+    @names = Name.all
   end
 
   def destroy
-    Email.find(params[:id]).destroy
+    Name.find(params[:id]).destroy
     flash[:success] = "Request deleted"
     redirect_to '/'
   end
+
 
 end

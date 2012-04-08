@@ -1,0 +1,22 @@
+<div class="row">
+ <div class="span6 offset3">
+
+<%= form_for @name do |f| %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <h4>Choose either a pinterest board or photo below</h4>
+
+    <%= f.label :link_to_pinterest_board %><br />
+    <%= f.text_field :board %>
+
+    <%= f.label :link_to_pinterest_photo %><br />  
+    <%= f.text_field :link %>
+
+    <%= f.submit "Submit", :class => "btn btn-large btn-primary" %>
+
+<% end %>
+
+  </div>
+</div>
